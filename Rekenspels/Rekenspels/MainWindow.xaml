@@ -6,7 +6,35 @@
         xmlns:local="clr-namespace:Rekenspels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="LightYellow">
+        <Rectangle HorizontalAlignment="Center" Height="365" Stroke="Black" Fill="White" VerticalAlignment="Center" Width="258" RadiusX="26.5" RadiusY="26.5"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,56,0,0" TextWrapping="Wrap" Text="Het Rekenspel" FontSize="20px" Foreground="Orange" FontWeight="Bold" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="32"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,97,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <Button Content="Check Antwoord" HorizontalAlignment="Center" Margin="0,179,0,0" VerticalAlignment="Top" Width="116"  Click="Button_Click" Background="green" Foreground="white" Height="22"/>
+        <Button Content="Nieuwe Som" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="116"  Click="Button_Click" Background="darkblue" Foreground="white" Height="22"/>
+        <Button Content="Start" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Top" Width="80"  Click="Button_Click" Background="pink" Foreground="white" Height="19"/>
+        <Button Content="Restart" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Width="115"  Click="Button_Click" Background="purple" Foreground="white" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="364,300,0,0" TextWrapping="Wrap" Text="✭Score:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="418,300,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="14" RenderTransformOrigin="0.5,0.5" Width="6">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="285,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="🧡"/>
+        <TextBlock HorizontalAlignment="Left" Margin="305,75,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Text="⌛Time:" Height="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="414,261,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,281,0,0" TextWrapping="Wrap" Text="🥇Record:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="418,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="10"><Run Text="0"/><LineBreak/><Run/></TextBlock>
+        <Button Content="⏸" HorizontalAlignment="Left" Margin="472,131,0,0" VerticalAlignment="Top" Height="32" Background="white" Foreground="black" FontSize="22px" Width="34"/>
+        <TextBlock HorizontalAlignment="Left" Margin="376,92,0,0" TextWrapping="Wrap" FontSize="20px" VerticalAlignment="Top"><Run Text="2"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="414,92,0,0" TextWrapping="Wrap" FontSize="20px" VerticalAlignment="Top"><Run Text="2"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>
