@@ -10,11 +10,10 @@
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <Rectangle HorizontalAlignment="Left" Height="365" Stroke="Black" Fill="White" VerticalAlignment="Top" Width="258" RadiusX="26.5" RadiusY="26.5"/>
             <TextBlock HorizontalAlignment="Left" Margin="62,21,0,0" TextWrapping="Wrap" Text="Het Rekenspel" FontSize="20px" Foreground="Orange" FontWeight="Bold" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="62,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="32"/>
-            <TextBlock HorizontalAlignment="Left" Margin="125,62,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
-            <Button Content="Check Antwoord" HorizontalAlignment="Left" Margin="71,144,0,0" VerticalAlignment="Top" Width="116"  Click="Button_Click" Background="green" Foreground="white" Height="22"/>
+            <TextBox Name ="sumTB" HorizontalAlignment="Center" Margin="0,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="32"/>
+            <Button Name="checkRes" Content="Check Antwoord" HorizontalAlignment="Left" Margin="71,144,0,0" VerticalAlignment="Top" Width="116"  Click="Button_Click_Rez" Background="green" Foreground="white" Height="22"/>
             <Button Content="Nieuwe Som" HorizontalAlignment="Left" Margin="71,182,0,0" VerticalAlignment="Top" Width="116"  Click="Button_Click" Background="darkblue" Foreground="white" Height="22"/>
-            <Button Content="Start" HorizontalAlignment="Left" Margin="89,317,0,0" VerticalAlignment="Top" Width="80"  Click="Button_Click" Background="pink" Foreground="white" Height="19"/>
+            <Button Name="mathBut" Content="Start" HorizontalAlignment="Left" Margin="89,317,0,0" VerticalAlignment="Top" Width="80"  Click="Button_Click" Background="pink" Foreground="white" Height="19"/>
             <Button Content="Restart" HorizontalAlignment="Center" Margin="0,291,0,0" VerticalAlignment="Top" Width="114"  Click="Button_Click" Background="purple" Foreground="white" Height="21"/>
             <TextBlock HorizontalAlignment="Left" Margin="93,265,0,0" TextWrapping="Wrap" Text="✭Score:" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="147,265,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="14" RenderTransformOrigin="0.5,0.5" Width="6">
@@ -30,12 +29,12 @@
             <TextBlock HorizontalAlignment="Left" Margin="14,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="🧡"/>
             <TextBlock HorizontalAlignment="Left" Margin="34,40,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="89,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Text="⌛Time:" Height="16"/>
-            <TextBlock HorizontalAlignment="Left" Margin="143,226,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="79,246,0,0" TextWrapping="Wrap" Text="🥇Record:" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="147,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="10"><Run Text="0"/><LineBreak/><Run/></TextBlock>
-            <Button Content="⏸" HorizontalAlignment="Left" Margin="201,96,0,0" VerticalAlignment="Top" Height="32" Background="white" Foreground="black" FontSize="22px" Width="34"/>
-            <TextBlock HorizontalAlignment="Left" Margin="105,57,0,0" TextWrapping="Wrap" FontSize="20px" VerticalAlignment="Top"><Run Text="2"/><LineBreak/><Run/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="143,57,0,0" TextWrapping="Wrap" FontSize="20px" VerticalAlignment="Top"><Run Text="2"/><LineBreak/><Run/></TextBlock>
+            <Button Content="⏸" HorizontalAlignment="Left" Margin="201,69,0,0" VerticalAlignment="Top" Height="32" Background="white" Foreground="black" FontSize="22px" Width="34"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,56,0,0" TextWrapping="Wrap" FontSize="20px" Foreground="Orange" FontWeight="Bold" VerticalAlignment="Top"/>
+            <TextBox Name="timerTB" HorizontalAlignment="Left" Margin="139,226,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="23" />
+            <TextBox Name="resultTB" HorizontalAlignment="Left" Margin="99,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Height="25" TextChanged="resultTB_TextChanged" />
 
         </Grid>
 
