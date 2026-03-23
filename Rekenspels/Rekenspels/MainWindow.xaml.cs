@@ -150,16 +150,25 @@ namespace Rekenspels
         private void Easy_Button_Click(object sender, RoutedEventArgs e)
         {
             difficulty = 11;
+            Easy.Background = new SolidColorBrush(Colors.LightBlue);
+            Normal.Background = new SolidColorBrush(Colors.Orange);
+            Hard.Background = new SolidColorBrush(Colors.Red);
         }
 
         private void Mid_Button_Click(object sender, RoutedEventArgs e)
         {
             difficulty = 21;
+            Easy.Background = new SolidColorBrush(Colors.Green);
+            Normal.Background = new SolidColorBrush(Colors.LightBlue);
+            Hard.Background = new SolidColorBrush(Colors.Red);
         }
 
         private void Hard_Button_Click(object sender, RoutedEventArgs e)
         {
             difficulty = 51;
+            Easy.Background = new SolidColorBrush(Colors.Green);
+            Normal.Background = new SolidColorBrush(Colors.Orange);
+            Hard.Background = new SolidColorBrush(Colors.LightBlue);
         }
     }
 }

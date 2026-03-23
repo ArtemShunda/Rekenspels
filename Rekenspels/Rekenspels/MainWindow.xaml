@@ -43,9 +43,9 @@
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="582,47,0,0">
             <Rectangle HorizontalAlignment="Left" Height="145" Stroke="Black" Fill="white" VerticalAlignment="Top" Width="156" RadiusX="14.062" RadiusY="14.062"/>
             <TextBlock HorizontalAlignment="Left" Margin="26,8,0,0" TextWrapping="Wrap" Foreground="Purple" FontWeight="Bold" VerticalAlignment="Top" Text="Moeilijkheidsniveau"/>
-            <Button Content="Makkelijk" Background="green" Click="Easy_Button_Click" FontWeight="Bold"  HorizontalAlignment="Left" Margin="33,35,0,0" VerticalAlignment="Top" Width="90" Height="27"/>
-            <Button Content="Normaal" Background="orange" Click="Mid_Button_Click" FontWeight="Bold" HorizontalAlignment="Left" Margin="33,68,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
-            <Button Content="Moelijk" Background="red" Click="Hard_Button_Click" FontWeight="Bold" HorizontalAlignment="Left" Margin="33,104,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
+            <Button Name="Easy" Content="Makkelijk" Background="green" Click="Easy_Button_Click" FontWeight="Bold"  HorizontalAlignment="Left" Margin="33,35,0,0" VerticalAlignment="Top" Width="90" Height="27"/>
+            <Button Name="Normal" Content="Normaal" Background="orange" Click="Mid_Button_Click" FontWeight="Bold" HorizontalAlignment="Left" Margin="33,68,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
+            <Button Name="Hard" Content="Moelijk" Background="red" Click="Hard_Button_Click" FontWeight="Bold" HorizontalAlignment="Left" Margin="33,104,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
         </Grid>
     </Grid>
 </Window>
