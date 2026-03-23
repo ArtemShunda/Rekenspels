@@ -22,7 +22,7 @@ namespace Rekenspels
         Random random = new Random();
         int getal1;
         int getal2;
-        int difficulty;
+        int difficulty = 0;
         string math;
 
         int number3P;
@@ -96,6 +96,7 @@ namespace Rekenspels
 
         void mathResult(int userAnswer)
         {
+            Level.Text = (int.Parse(Level.Text) + 1).ToString();
             if (userAnswer == number3P)
             {
                 score.Text = (int.Parse(score.Text) + 1).ToString();
@@ -113,6 +114,11 @@ namespace Rekenspels
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if(difficulty == 0)
+            {
+                MessageBox.Show("Kies een moeilijkheidsgraad!");
+                return;
+            }
             score.Text = "0";
             MakeNewMath();
             StartTimer();
@@ -131,6 +137,7 @@ namespace Rekenspels
         {
             MakeNewMath();
             score.Text = "0";
+            Level.Text = "0";
             counter = 100;
             back.Background = new SolidColorBrush(Colors.LightYellow);
         }
