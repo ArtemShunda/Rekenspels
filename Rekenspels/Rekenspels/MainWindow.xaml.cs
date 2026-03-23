@@ -12,9 +12,6 @@ using System.Windows.Threading;
 
 namespace Rekenspels
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -22,39 +19,26 @@ namespace Rekenspels
             InitializeComponent();
         }
 
-
-
-        public void MakeNewTimer()
-        {
-            int timerGetal = 99;
-            for(int i = 0; i > 0; timerGetal--)
-            {
-                timerGetal--;
-                timerTB.Text = timerGetal.ToString();
-            }
-
-
-
-        }
-
         Random random = new Random();
         int getal1;
         int getal2;
+        int difficulty;
         string math;
 
+        int number3P;
 
         DispatcherTimer dt = new DispatcherTimer();
         int counter = 99;
 
         void StartTimer()
         {
-            if (dt.IsEnabled) return; 
+            if (dt.IsEnabled) return;
 
-            counter = 99; 
+            counter = 99;
             timerTB.Text = counter.ToString();
 
             dt.Interval = TimeSpan.FromSeconds(1);
-           
+
             dt.Tick -= dtTicker;
             dt.Tick += dtTicker;
             dt.Start();
@@ -74,80 +58,101 @@ namespace Rekenspels
             }
         }
 
-
-
-
-
-
         void MakeNewMath()
         {
-            getal1 = random.Next(1, 11);
-            int getal1P = getal1;
-            getal2 = random.Next(1, 11);
-            int getal2P = getal2;
-            int getal3 = 0;
+            getal1 = random.Next(1, difficulty);
+            int number1P = getal1;
+            getal2 = random.Next(1, difficulty);
+            int number2P = getal2;
 
             int choice = random.Next(1, 5);
             if (choice == 1)
             {
                 math = "+";
-                int getal3P = getal2P + getal1P;
-
+                number3P = number2P + number1P;
             }
             else if (choice == 2)
             {
                 math = "-";
-                int getal3P = getal1P - getal2P;
+                number3P = number1P - number2P;
             }
             else if (choice == 3)
             {
                 math = "/";
-                int getal3P = getal1P / getal2P;
+                number3P = number1P / number2P;
             }
             else
             {
                 math = "*";
-                int getal3P = getal1P * getal2P;
+                number3P = number1P * number2P;
             }
 
-            sumTB.Text = getal1 + "" + math + "" + getal2;
+            firstNum.Text = getal1.ToString();
+            mathOp.Text = math;
+            secondNum.Text = getal2.ToString();
 
-            
-
+            resultTB.Text = string.Empty;
         }
-        void mathResult(int getal3)
+
+        void mathResult(int userAnswer)
         {
-
-            int result = int.Parse(resultTB.Text);
-            if (result != getal3)
+            if (userAnswer == number3P)
             {
-                Environment.Exit(0);
-
+                score.Text = (int.Parse(score.Text) + 1).ToString();
+                if (int.Parse(Record.Text) < int.Parse(score.Text))
+                {
+                    Record.Text = score.Text;
+                }
+                back.Background = new SolidColorBrush(Colors.Green);
             }
-
-
-
+            else
+            {
+                back.Background = new SolidColorBrush(Colors.Red);
+            }
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            score.Text = "0";
             MakeNewMath();
             StartTimer();
-
         }
 
-        private void Button_Click_Rez(object sender, RoutedEventArgs e)
+        private void Check_Button_Click(object sender, RoutedEventArgs e)
         {
-               MakeNewMath();
-               
+            if (int.TryParse(resultTB.Text, out int userAnswer))
+            {
+                mathResult(userAnswer);
+                MakeNewMath();
 
-
+            }
+        }
+        private void Restart_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MakeNewMath();
+            score.Text = "0";
+            counter = 100;
+            back.Background = new SolidColorBrush(Colors.LightYellow);
         }
 
         private void resultTB_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Easy_Button_Click(object sender, RoutedEventArgs e)
+        {
+            difficulty = 11;
+        }
+
+        private void Mid_Button_Click(object sender, RoutedEventArgs e)
+        {
+            difficulty = 21;
+        }
+
+        private void Hard_Button_Click(object sender, RoutedEventArgs e)
+        {
+            difficulty = 51;
         }
     }
 }
