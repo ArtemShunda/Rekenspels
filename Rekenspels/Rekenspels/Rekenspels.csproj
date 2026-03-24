@@ -13,4 +13,13 @@
     <Content Include="bin\Debug\net8.0-windows\Sounds\victory.wav" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Sounds\lose.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Sounds\victory.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
