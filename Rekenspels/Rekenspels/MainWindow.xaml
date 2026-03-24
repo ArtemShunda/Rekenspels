@@ -41,6 +41,8 @@
             <TextBox Name="timerTB" HorizontalAlignment="Left" Margin="139,226,0,0" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Width="23" />
             <TextBox Name="resultTB" HorizontalAlignment="Left" Margin="86,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Height="25" TextChanged="resultTB_TextChanged" />
             <Button Name="soundBtn" Content="🔊 ON" HorizontalAlignment="Left" Margin="20,333,0,0" VerticalAlignment="Top" Background="Lavender" Foreground="White" Click="Button_Sound" Height="22" Width="50"/>
+            <TextBlock HorizontalAlignment="Left" Margin="105,3,0,0" TextWrapping="Wrap" Text="Level" VerticalAlignment="Top"/>
+            <TextBlock Name="Level" HorizontalAlignment="Left" Margin="137,3,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"/>
         </Grid>
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="582,47,0,0">
             <Rectangle HorizontalAlignment="Left" Height="145" Stroke="Black" Fill="white" VerticalAlignment="Top" Width="156" RadiusX="14.062" RadiusY="14.062"/>

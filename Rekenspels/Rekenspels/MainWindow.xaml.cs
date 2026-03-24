@@ -148,6 +148,7 @@ namespace Rekenspels
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             currentHp = 3;
+            back.Background = new SolidColorBrush(Colors.LightYellow);
             hp.Text = currentHp.ToString();
             if(difficulty == 0)
             {
