@@ -8,4 +8,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="bin\Debug\net8.0-windows\Sounds\lose.wav" />
+    <Content Include="bin\Debug\net8.0-windows\Sounds\victory.wav" />
+  </ItemGroup>
+
 </Project>
