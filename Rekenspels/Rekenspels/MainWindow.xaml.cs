@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Media;
 
 namespace Rekenspels
 {
@@ -26,6 +27,13 @@ namespace Rekenspels
         string math;
 
         int number3P;
+        int currentHp = 3;
+
+        SoundPlayer correctSound = new SoundPlayer("Sounds/victory.wav");
+        SoundPlayer wrongSound = new SoundPlayer("Sounds/lose.wav");
+        bool soundEnabled = true;
+
+        bool isPaused = false;
 
         DispatcherTimer dt = new DispatcherTimer();
         int counter = 99;
@@ -105,15 +113,42 @@ namespace Rekenspels
                     Record.Text = score.Text;
                 }
                 back.Background = new SolidColorBrush(Colors.Green);
+                if(soundEnabled)
+                {
+                    correctSound.Play();
+                }
             }
             else
             {
                 back.Background = new SolidColorBrush(Colors.Red);
+                if(soundEnabled)
+                {
+                    wrongSound.Play();
+                    
+                }
+
+                currentHp--;
+                hp.Text = currentHp.ToString();
+
+                if (currentHp == 0) 
+                {
+                    GameOver();
+                    
+                }
             }
+        }
+
+        void GameOver()
+        {
+            dt.Stop();
+            MessageBox.Show("Game over!");
+            resultTB.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            currentHp = 3;
+            hp.Text = currentHp.ToString();
             if(difficulty == 0)
             {
                 MessageBox.Show("Kies een moeilijkheidsgraad!");
@@ -135,6 +170,10 @@ namespace Rekenspels
         }
         private void Restart_Button_Click(object sender, RoutedEventArgs e)
         {
+            currentHp = 3;
+            hp.Text = currentHp.ToString();
+            resultTB.IsEnabled = true;
+            StartTimer();
             MakeNewMath();
             score.Text = "0";
             Level.Text = "0";
@@ -169,6 +208,48 @@ namespace Rekenspels
             Easy.Background = new SolidColorBrush(Colors.Green);
             Normal.Background = new SolidColorBrush(Colors.Orange);
             Hard.Background = new SolidColorBrush(Colors.LightBlue);
+        }
+
+        private void Button_Sound(object sender, RoutedEventArgs e)
+        {
+            soundEnabled = !soundEnabled;
+
+            if (soundEnabled)
+            {
+                soundBtn.Content = "🔊 ON";
+                
+            }
+            else
+            {
+                soundBtn.Content = "🔇OFF";
+            }
+        }
+
+        private void Button_NewSum(object sender, RoutedEventArgs e)
+        {
+            MakeNewMath();
+        }
+
+        private void Button_Pause(object sender, RoutedEventArgs e)
+        {
+            if (!isPaused)
+            {
+                isPaused = true;
+                dt.Stop();
+                pauseBtn.Content = "▶";
+                resultTB.IsEnabled = false;
+                back.Background = new SolidColorBrush(Colors.Gray);
+            }
+            else
+            {
+                isPaused = false;
+                dt.Start();
+                pauseBtn.Content = "⏸";
+                resultTB.IsEnabled = true;
+                back.Background = new SolidColorBrush(Colors.LightYellow);
+            }
+
+
         }
     }
 }
