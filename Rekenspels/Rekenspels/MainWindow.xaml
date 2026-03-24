@@ -55,12 +55,14 @@
             <Button Name="Normal" Content="Normaal" Background="orange" Click="Mid_Button_Click" FontWeight="Bold" HorizontalAlignment="Left" Margin="33,68,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
             <Button Name="Hard" Content="Moelijk" Background="red" Click="Hard_Button_Click" FontWeight="Bold" HorizontalAlignment="Left" Margin="33,104,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
         </Grid>
-        <Rectangle HorizontalAlignment="Left" Height="170" Margin="96,47,0,0" Stroke="Black" Fill ="White" VerticalAlignment="Top" Width="58" RadiusX="14.062" RadiusY="14.062" Grid.RowSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="103,52,0,0" TextWrapping="Wrap" Text="Operator" VerticalAlignment="Top" Foreground="Purple"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="111,73,0,0" VerticalAlignment="Top" Click="Button_Plus" Width="30" Background="#FFE90D0D"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="111,101,0,0" VerticalAlignment="Top" Width="30" Grid.RowSpan="2" Click="Button_Min" Background="#FFFA6713"/>
-        <Button Content="*" HorizontalAlignment="Left" Margin="111,14,0,0" VerticalAlignment="Top" Width="30" Grid.Row="1" Click="Button_Keer" Background="#FFF0DA12"/>
-        <Button Content="/" HorizontalAlignment="Left" Margin="111,43,0,0" VerticalAlignment="Top" Width="30" Grid.Row="1" Click="Button_Del" Background="#FF8BE915"/>
-        <Button Content="Random" HorizontalAlignment="Left" Margin="105,70,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="10" Background="#FF17F0A9" Click="Button_Rand" />
+        <Grid HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Margin="148,39,0,0">
+            <Rectangle HorizontalAlignment="Left" Height="170" Stroke="Black" Fill ="White" VerticalAlignment="Top" Width="58" RadiusX="14.062" RadiusY="14.062"/>
+            <TextBlock HorizontalAlignment="Left" Margin="7,5,0,0" TextWrapping="Wrap" Text="Operator" VerticalAlignment="Top" Foreground="Purple"/>
+            <Button Content="+" HorizontalAlignment="Left" Margin="15,26,0,0" VerticalAlignment="Top" Click="Button_Plus" Width="30" Background="#FFE90D0D"/>
+            <Button Content="-" HorizontalAlignment="Left" Margin="15,54,0,0" VerticalAlignment="Top" Width="30" Click="Button_Min" Background="#FFFA6713"/>
+            <Button Content="*" HorizontalAlignment="Left" Margin="15,83,0,0" VerticalAlignment="Top" Width="30" Click="Button_Keer" Background="#FFF0DA12"/>
+            <Button Content="/" HorizontalAlignment="Left" Margin="15,112,0,0" VerticalAlignment="Top" Width="30" Click="Button_Del" Background="#FF8BE915"/>
+            <Button Content="Random" HorizontalAlignment="Left" Margin="9,139,0,0" VerticalAlignment="Top" FontSize="10" Background="#FF17F0A9" Click="Button_Rand" />
+        </Grid>
     </Grid>
 </Window>
