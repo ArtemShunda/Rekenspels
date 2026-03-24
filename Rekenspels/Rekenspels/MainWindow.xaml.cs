@@ -38,6 +38,8 @@ namespace Rekenspels
         DispatcherTimer dt = new DispatcherTimer();
         int counter = 99;
 
+        string selectedOperator = "";
+
         void StartTimer()
         {
             if (dt.IsEnabled) return;
@@ -73,26 +75,34 @@ namespace Rekenspels
             getal2 = random.Next(1, difficulty);
             int number2P = getal2;
 
-            int choice = random.Next(1, 5);
-            if (choice == 1)
+            string math = selectedOperator;
+
+            if (math == "") 
             {
-                math = "+";
-                number3P = number2P + number1P;
+                int choice = random.Next(1, 5);
+
+                if (choice == 1) math = "+";
+                else if (choice == 2) math = "-";
+                else if (choice == 3) math = "*";
+                else math = "/";
             }
-            else if (choice == 2)
+
+            if (math == "+")
             {
-                math = "-";
+                number3P = number1P + number2P;
+            }
+            else if (math == "-")
+            {
                 number3P = number1P - number2P;
             }
-            else if (choice == 3)
+            else if (math == "*")
             {
-                math = "/";
-                number3P = number1P / number2P;
-            }
-            else
-            {
-                math = "*";
                 number3P = number1P * number2P;
+            }
+            else if (math == "/")
+            {
+                number2P = random.Next(1, difficulty); 
+                number3P = number1P / number2P;
             }
 
             firstNum.Text = getal1.ToString();
@@ -250,6 +260,39 @@ namespace Rekenspels
                 back.Background = new SolidColorBrush(Colors.LightYellow);
             }
 
+
+        }
+
+        private void Button_Plus(object sender, RoutedEventArgs e)
+        {
+            selectedOperator = "+";
+
+
+        }
+
+        private void Button_Min(object sender, RoutedEventArgs e)
+        {
+
+            selectedOperator = "-";
+        }
+
+        private void Button_Keer(object sender, RoutedEventArgs e)
+        {
+            selectedOperator = "*";
+
+
+        }
+
+        private void Button_Del(object sender, RoutedEventArgs e)
+        {
+
+            selectedOperator = "/";
+
+        }
+
+        private void Button_Rand(object sender, RoutedEventArgs e)
+        {
+            selectedOperator = "";
 
         }
     }
